@@ -24,12 +24,14 @@ for i in range(num):
     ls.append(text)
 
 for i in range(len(ls)):
+    actual_name = ""
     for j in range(len(ls[i])):
-        if ls[i][j] in expect_name and ls[i][j] not in actual_name:
+        if ls[i][j] in expect_name:
             actual_name += ls[i][j]
+            if actual_name[len(actual_name)-1] != expect_name[len(actual_name)-1]:
+                actual_name = actual_name[0: len(actual_name)-1]
             if actual_name == expect_name:
                 ref_nums.append(i+1)
-                actual_name = ""
                 break
 
 print(*ref_nums)
