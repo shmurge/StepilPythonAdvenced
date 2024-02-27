@@ -15,3 +15,26 @@
 # Примечание. Считайте, что нумерация строк и столбцов начинается с нуля.
 
 
+def create_matrix(size):
+    matrix = [input().split() for _ in range(size)]
+    for i in range(size):
+        for j in range(len(matrix[i])):
+            matrix[i][j] = int(matrix[i][j])
+
+    return matrix
+
+
+n = int(input())
+m = int(input())
+matrix_1 = create_matrix(n)
+row = 0
+column = 0
+maximum = matrix_1[0][0]
+
+for i in range(len(matrix_1)):
+    if max(matrix_1[i]) > maximum:
+        maximum = max(matrix_1[i])
+        column = matrix_1[i].index(maximum)
+        row = i
+
+print(row, column)
