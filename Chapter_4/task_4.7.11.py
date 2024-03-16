@@ -22,7 +22,7 @@ matrix_1 = create_matrix(n)
 m = int(input())
 matrix_2 = matrix_1.copy()
 matrix_3 = list()
-count = 0
+count = 1
 
 while count < m:
     matrix_4 = list()
