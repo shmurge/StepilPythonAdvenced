@@ -8,22 +8,17 @@
 # Программа должна вывести цифры в соответствии с условием задачи. Если общих цифр нет, то ничего выводить не нужно.
 
 n = int(input())
-nums_ls = list()
-result_set = set()
-temp_set = set()
+ls_1 = [str(i) for i in range(11)]
+result_set = set(ls_1)
 
 for i in range(n):
-    str_num = input()
-    nums_ls.append(str_num)
-    if i == 0:
-        for j in range(len(str_num)):
-            result_set.update(str_num[j])
+    result_set.intersection_update(input())
 
-for i in range(1, len(nums_ls)):
-    for j in range(len(nums_ls[i])):
-        temp_set.update(nums_ls[i][j])
-    result_set.intersection_update(temp_set)
-    temp_set.clear()
+ls_2 = list(result_set)
 
-result_set = sorted(result_set)
-print(*result_set)
+for i in range(len(ls_2)):
+    ls_2[i] = int(ls_2[i])
+
+result_set = set(ls_2)
+
+print(*sorted(result_set))
