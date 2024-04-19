@@ -12,21 +12,20 @@
 # Примечание 2. Слово — последовательность букв. Кроме слов в тексте могут присутствовать пробелы
 # и знаки препинания .,!?:;-, которые нужно игнорировать. Других символов в тексте нет.
 
-text = input()
-punctuation = """'!.,-)(?:;"""
-dict_1 = {}
+dict1 = {}
 result = {}
-
-for c in text:
-    if c in punctuation:
-        text = text.replace(c, "")
-
-text_ls = list(text.split())
+text_ls = [word.strip('.,!?:;-') for word in input().lower().split()]
 
 for word in text_ls:
-    if word not in dict_1:
-        dict_1[word] = ""
+    if word not in dict1:
+        dict1[word] = 1
+    else:
+        dict1[word] += 1
 
+min_count = (min(dict1.values()))
 
+for v in dict1:
+    if dict1[v] == min_count:
+        result[v] = dict1[v]
 
-print(result)
+print(min(result))
