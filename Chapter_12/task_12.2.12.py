@@ -15,4 +15,26 @@
 
 from random import *
 
+
+def secret_friend(quantity):
+    students_ls = [input() for _ in range(quantity)]
+    secret_friend_ls = list()
+    result_ls = list()
+
+    for i in range(len(students_ls)):
+        student = students_ls[i]
+
+        while 1 == 1:
+            friend = choice(students_ls)
+            if (friend != student) and (friend not in secret_friend_ls):
+                row = student + ' - ' + friend
+                result_ls.append(row)
+                secret_friend_ls.append(friend)
+                break
+
+    return result_ls
+
+
 n = int(input())
+print(*secret_friend(n), sep='\n')
+
