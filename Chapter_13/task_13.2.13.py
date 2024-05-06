@@ -12,7 +12,18 @@
 # Функция реализована в модуле math.
 
 
-from math import *
 from fractions import Fraction as F
 
 n = int(input())
+nums = list()
+
+for i in range(n, 1, -1):
+    for j in range(1, i):
+        if i % j == 0 and j != 1:
+            continue
+        if F(j, i) not in nums:
+            nums.append(F(j, i))
+
+nums.sort()
+
+print(*nums, sep='\n')
