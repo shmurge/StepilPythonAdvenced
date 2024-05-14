@@ -18,5 +18,5 @@
 from math import *
 
 
-funcs = {'квадрат' po:
+funcs = {'квадрат':
          ''}
