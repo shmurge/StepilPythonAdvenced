@@ -18,5 +18,21 @@
 from math import *
 
 
-funcs = {'квадрат':
-         ''}
+def square(num):
+    return num**2
+
+
+def cube(num):
+    return num**3
+
+
+funcs = {'квадрат': square,
+         'куб': cube,
+         'модуль': abs,
+         'корень': sqrt,
+         'синус': sin}
+
+n = int(input())
+func = input()
+
+print(funcs[func](n))
