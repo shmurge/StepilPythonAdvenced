@@ -17,7 +17,7 @@
 
 def ip_to_decimal(ip_address):
     ip = ip_address.split('.')
-    return int(ip[0])*256**3 + int(ip[1])*256**2 + int(ip[2])*256**1 + int(ip[3])*256**0
+    return int(ip[0]) * 256 ** 3 + int(ip[1]) * 256 ** 2 + int(ip[2]) * 256 ** 1 + int(ip[3]) * 256 ** 0
 
 
 n = int(input())
